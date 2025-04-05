@@ -19,4 +19,4 @@ for i in fctors:
     if run:
         pfac.append(i)
 
-print(max(pfac))
+print("The largest prime factor of the numbe: ", max(pfac))

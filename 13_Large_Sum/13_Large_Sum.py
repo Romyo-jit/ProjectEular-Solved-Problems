@@ -212,4 +212,4 @@ sum = 0
 for i in nums:
     sum = sum + i
 
-print(str(sum)[:10])
+print("The first ten digits of the sum is:", str(sum)[:10])
