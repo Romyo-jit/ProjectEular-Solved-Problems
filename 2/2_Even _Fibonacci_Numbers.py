@@ -20,4 +20,4 @@ for i in arr:
     if i%2 == 0:
         add = add + i
 
-print(add)
+print('The sum of the even-valued terms in the Fibonacci sequence not exceeding four million is:', add)
