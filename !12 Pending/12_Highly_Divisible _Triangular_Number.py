@@ -37,7 +37,6 @@ def div_num(num):
     count = 1
     fct = [1]
     primes = SieveOfEratos(int(num**(1/2)))
-    print(primes)
     for i in range(2, int(num**(1/2)) + 1):
         if (primes[i]) and (num%i == 0):
             fct.append(i)
