@@ -21,65 +21,30 @@ What is the value of the first triangle number to have over five hundred divisor
 
 import time
 
-
-
-def SieveOfEratos(n):
-    prime = [True for i in range(n+1)]
-    p = 2
-    while (p*p <= n):
-        if (prime[p]):
-            for i in range(p*p, n+1, p):
-                prime[i] = False
-        p = p + 1
-    return prime
-
 def div_num(num):
-    count = 1
-    fct = [1]
-    primes = SieveOfEratos(int(num**(1/2)))
-    for i in range(2, int(num**(1/2)) + 1):
-        if (primes[i]) and (num%i == 0):
-            fct.append(i)
-
-    print(fct)
-    s = 0
-
-    for i in fct[::-1]:
-        if i == 1:
-            break
-        for j in range(1, i**2):
-            if i**j > num:
-                s = s + j
-                break
-    
-    print(s)
-    #return len(fct)
-
-'''
-Starting with n = 1 total divisor 100 output = 73920 Time: 0.5059191000000283 Seconds
-Then n = 10000 total divisor = 200
-
+    count = 0
+    for i in range(1, int(num**(1/2)) + 1):
+        if num%i == 0:
+            if i == num//i:
+                count = count + 1
+            else:
+                count = count + 2
+    return count
 
 n = 1
-total_divisor = 100
+total_divisor = 500
 sm = 0
 sm = n*(n+1)//2
 
 st_tim = time.perf_counter()
 
 while True:
-    #print(sm)
     cnt = div_num(sm)
-    #print(cnt)
     if cnt > total_divisor:
         break
     n = n+1
     sm = sm + n
 
 end_tim = time.perf_counter()
-print(sm)
+print("The value of the first triangle number to have over five hundred divisors is:", sm)
 print('Time:', end_tim - st_tim, 'Seconds')
-'''
-
-#print(div_num(100))
-div_num(100)
