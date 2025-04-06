@@ -44,8 +44,10 @@ def div_num(num):
     print(fct)
     s = 0
 
-    for i in fct[1::-1]:
-        for j in range(i):
+    for i in fct[::-1]:
+        if i == 1:
+            break
+        for j in range(1, i**2):
             if i**j > num:
                 s = s + j
                 break
