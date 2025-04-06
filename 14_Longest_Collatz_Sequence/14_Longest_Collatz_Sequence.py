@@ -17,3 +17,30 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 '''
 
+import time, functools
+
+@functools.lru_cache(maxsize=None)
+def collaz_conjec(num):
+    if num == 1:
+        return 1
+    if num%2 == 0:
+        num = num//2
+    else:
+        num = num*3 + 1
+    return 1 + collaz_conjec(num)
+
+long_chain = 0
+ans = 0
+
+st_tim = time.perf_counter()
+
+for i in range(1, 10**6-1):
+   chain = collaz_conjec(i)
+   if chain > long_chain:
+       long_chain = chain
+       ans = i
+
+end_tim = time.perf_counter()
+
+print("Longest Chain under 1 million is:", ans)
+print('Time:', end_tim - st_tim, 'Seconds')
