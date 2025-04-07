@@ -3,6 +3,7 @@
 
                     !!!LOOK AT THE Lattice.png!!!
 
-
 * How many such routes are there through a 20x20 grid?
 '''
+sq = 20
+no_of_vtex_passed = 2*20 + 1
