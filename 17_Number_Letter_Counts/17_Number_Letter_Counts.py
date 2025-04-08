@@ -37,4 +37,7 @@ for i in mult_of_100:
 for i in "onethousand":
     count += 1
 
+## Now the last line 
+## Tbh i'm feeling like a genius ;)
+
 print("If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, total letters would be used is:", count + len_to_99 + sum_100)
