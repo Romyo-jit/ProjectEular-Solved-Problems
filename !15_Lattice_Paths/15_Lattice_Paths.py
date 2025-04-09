@@ -5,5 +5,17 @@
 
 * How many such routes are there through a 20x20 grid?
 '''
-sq = 20
-no_of_vtex_passed = 2*20 + 1
+from functools import lru_cache
+
+@lru_cache
+def fact(num):
+    if num == 1:
+        return 1
+    return num*fact(num-1)
+
+path = ['right' for _ in range(20)]
+for _ in range(20):
+    path.append('down')
+
+num_of_routes = fact(40)/(fact(20)*fact(20))
+print("Total routes: ", int(num_of_routes))
