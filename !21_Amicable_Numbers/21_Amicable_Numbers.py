@@ -9,3 +9,14 @@ Evaluate the sum of all the amicable numbers under 10000.
 
 '''
 
+def factor(n):
+    '''returns the sum of proper divisors of n'''
+    if n < 1:
+        return 0
+    s = 1
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            s += i + n // i
+    return s
+
+def aicable()
