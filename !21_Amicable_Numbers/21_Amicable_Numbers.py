@@ -19,4 +19,5 @@ def factor(n):
             s += i + n // i
     return s
 
-def aicable()
+def amicable():
+    
